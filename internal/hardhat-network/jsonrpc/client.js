@@ -307,4 +307,3 @@ class JsonRpcClient {
     }
 }
 exports.JsonRpcClient = JsonRpcClient;
-//# sourceMappingURL=client.js.map

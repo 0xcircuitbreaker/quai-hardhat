@@ -252,4 +252,3 @@ function saveFlamegraph(profile) {
     return createFlamegraphHtmlFile(flamegraph);
 }
 exports.saveFlamegraph = saveFlamegraph;
-//# sourceMappingURL=flamegraph.js.map

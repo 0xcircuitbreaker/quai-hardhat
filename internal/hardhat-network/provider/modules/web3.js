@@ -35,4 +35,3 @@ class Web3Module {
     }
 }
 exports.Web3Module = Web3Module;
-//# sourceMappingURL=web3.js.map

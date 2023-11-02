@@ -127,4 +127,3 @@ class TransactionQueue {
     }
 }
 exports.TransactionQueue = TransactionQueue;
-//# sourceMappingURL=TransactionQueue.js.map

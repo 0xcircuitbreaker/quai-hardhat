@@ -76,4 +76,3 @@ function getLastSafeBlock(latestBlock, maxReorg) {
     return latestBlock - maxReorg >= 0 ? latestBlock - maxReorg : latestBlock;
 }
 exports.getLastSafeBlock = getLastSafeBlock;
-//# sourceMappingURL=makeForkClient.js.map

@@ -1158,4 +1158,3 @@ function sourceLocationToSourceReference(bytecode, location) {
         range: [location.offset, location.offset + location.length],
     };
 }
-//# sourceMappingURL=error-inferrer.js.map

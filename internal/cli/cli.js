@@ -23,6 +23,7 @@ const ci_detection_1 = require("../util/ci-detection");
 const global_dir_1 = require("../util/global-dir");
 const packageInfo_1 = require("../util/packageInfo");
 const flamegraph_1 = require("../core/flamegraph");
+const configStore_1 = require("../util/configStore");
 const analytics_1 = require("./analytics");
 const ArgumentsParser_1 = require("./ArgumentsParser");
 const emoji_1 = require("./emoji");
@@ -131,6 +132,7 @@ async function main() {
             showEmptyConfigWarning,
             showSolidityConfigWarnings,
         });
+        (0, configStore_1.setConfig)(resolvedConfig);
         let telemetryConsent = (0, global_dir_1.hasConsentedTelemetry)();
         const isHelpCommand = hardhatArguments.help || taskName === task_names_1.TASK_HELP;
         if (telemetryConsent === undefined &&
@@ -256,4 +258,3 @@ main()
     console.error(error);
     process.exit(1);
 });
-//# sourceMappingURL=cli.js.map

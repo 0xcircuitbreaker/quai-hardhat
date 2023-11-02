@@ -109,4 +109,3 @@ function getTsNodeArgsIfNeeded(scriptPath, shouldTypecheck) {
     }
     return [];
 }
-//# sourceMappingURL=scripts-runner.js.map

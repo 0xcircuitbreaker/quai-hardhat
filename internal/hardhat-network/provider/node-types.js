@@ -5,4 +5,3 @@ function isForkedNodeConfig(config) {
     return "forkConfig" in config && config.forkConfig !== undefined;
 }
 exports.isForkedNodeConfig = isForkedNodeConfig;
-//# sourceMappingURL=node-types.js.map

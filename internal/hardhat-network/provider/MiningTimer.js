@@ -93,4 +93,3 @@ class MiningTimer {
     }
 }
 exports.MiningTimer = MiningTimer;
-//# sourceMappingURL=MiningTimer.js.map

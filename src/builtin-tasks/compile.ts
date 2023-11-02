@@ -2,6 +2,7 @@ import os from "os";
 import chalk from "chalk";
 import debug from "debug";
 import fsExtra from "fs-extra";
+import path from "path";
 import semver from "semver";
 import AggregateError from "aggregate-error";
 
@@ -19,14 +20,9 @@ import {
 } from "../internal/solidity/compilation-job";
 import { Compiler, NativeCompiler } from "../internal/solidity/compiler";
 import { getInputFromCompilationJob } from "../internal/solidity/compiler/compiler-input";
-import {
-  CompilerDownloader,
-  CompilerPlatform,
-} from "../internal/solidity/compiler/downloader";
 import { DependencyGraph } from "../internal/solidity/dependencyGraph";
 import { Parser } from "../internal/solidity/parse";
 import { ResolvedFile, Resolver } from "../internal/solidity/resolver";
-import { getCompilersDir } from "../internal/util/global-dir";
 import { pluralize } from "../internal/util/strings";
 import { Artifacts, CompilerInput, CompilerOutput, SolcBuild } from "../types";
 import * as taskTypes from "../types/builtin-tasks";
@@ -80,6 +76,7 @@ import {
   getSolidityFilesCachePath,
   SolidityFilesCache,
 } from "./utils/solidity-files-cache";
+import { getCustomCompilerPath } from "../internal/util/configStore";
 
 type ArtifactsEmittedPerFile = Array<{
   file: taskTypes.ResolvedFile;
@@ -576,35 +573,37 @@ subtask(TASK_COMPILE_SOLIDITY_GET_SOLC_BUILD)
       },
       { run }
     ): Promise<SolcBuild> => {
-      const compilersCache = await getCompilersDir();
+      const customCompilerPath = getCustomCompilerPath();
 
-      const compilerPlatform = CompilerDownloader.getCompilerPlatform();
-      const downloader = CompilerDownloader.getConcurrencySafeDownloader(
-        compilerPlatform,
-        compilersCache
-      );
 
-      const isCompilerDownloaded = await downloader.isCompilerDownloaded(
-        solcVersion
-      );
-
-      if (!isCompilerDownloaded) {
-        await run(TASK_COMPILE_SOLIDITY_LOG_DOWNLOAD_COMPILER_START, {
-          solcVersion,
-          isCompilerDownloaded,
-          quiet,
-        });
-
-        await downloader.downloadCompiler(solcVersion);
-
-        await run(TASK_COMPILE_SOLIDITY_LOG_DOWNLOAD_COMPILER_END, {
-          solcVersion,
-          isCompilerDownloaded,
-          quiet,
-        });
+      const resolvedPath = path.resolve(customCompilerPath);
+    
+      // Check if the customCompilerPath exists
+      if (!fsExtra.existsSync(resolvedPath)) {
+        console.log('\x1b[1m\x1b[31m%s\x1b[0m%s', 'Error:', ' Path not found: ' + resolvedPath);
+        process.exit()
+      }
+  
+      // Check if the customCompilerPath is a file
+      if (!fsExtra.statSync(resolvedPath).isFile()) {
+        console.log('\x1b[1m\x1b[31m%s\x1b[0m%s', 'Error:', ' Path is not a file: ' + resolvedPath);
+        process.exit()
+      }
+  
+      // Optionally, check if the path points to an executable file, if that's a requirement
+      try {
+        fsExtra.accessSync(resolvedPath, fsExtra.constants.X_OK);
+      } catch {
+        console.log('\x1b[1m\x1b[31m%s\x1b[0m%s', 'Error:', ' File at path is not an executable: ' + resolvedPath);
+        process.exit()
       }
 
-      const compiler = await downloader.getCompiler(solcVersion);
+      const compiler = {
+        version: 'Solx',
+        longVersion: 'Solidity X',
+        compilerPath: resolvedPath,
+        isSolcJs: false // or false
+      };
 
       if (compiler !== undefined) {
         return compiler;
@@ -613,32 +612,13 @@ subtask(TASK_COMPILE_SOLIDITY_GET_SOLC_BUILD)
       log(
         "Native solc binary doesn't work, using solcjs instead. Try running npx hardhat clean --global"
       );
-
-      const wasmDownloader = CompilerDownloader.getConcurrencySafeDownloader(
-        CompilerPlatform.WASM,
-        compilersCache
-      );
-
-      const isWasmCompilerDownloader =
-        await wasmDownloader.isCompilerDownloaded(solcVersion);
-
-      if (!isWasmCompilerDownloader) {
-        await run(TASK_COMPILE_SOLIDITY_LOG_DOWNLOAD_COMPILER_START, {
-          solcVersion,
-          isCompilerDownloaded,
-          quiet,
-        });
-
-        await wasmDownloader.downloadCompiler(solcVersion);
-
-        await run(TASK_COMPILE_SOLIDITY_LOG_DOWNLOAD_COMPILER_END, {
-          solcVersion,
-          isCompilerDownloaded,
-          quiet,
-        });
-      }
-
-      const wasmCompiler = await wasmDownloader.getCompiler(solcVersion);
+      
+      const wasmCompiler = {
+        version: 'Solx',
+        longVersion: 'Solidity X',
+        compilerPath: resolvedPath,
+        isSolcJs: true // or false
+      };
 
       assertHardhatInvariant(
         wasmCompiler !== undefined,

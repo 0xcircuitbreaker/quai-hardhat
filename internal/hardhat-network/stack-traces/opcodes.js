@@ -313,4 +313,3 @@ function isCreate(opcode) {
     return opcode === Opcode.CREATE || opcode === Opcode.CREATE2;
 }
 exports.isCreate = isCreate;
-//# sourceMappingURL=opcodes.js.map

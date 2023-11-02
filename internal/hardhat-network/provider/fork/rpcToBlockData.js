@@ -29,4 +29,3 @@ function rpcToBlockData(rpcBlock) {
     };
 }
 exports.rpcToBlockData = rpcToBlockData;
-//# sourceMappingURL=rpcToBlockData.js.map

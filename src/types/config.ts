@@ -279,6 +279,7 @@ export interface HardhatUserConfig {
   networks?: NetworksUserConfig;
   solidity?: SolidityUserConfig;
   mocha?: Mocha.MochaOptions;
+  customCompilerPath?: string;
 }
 
 export interface HardhatConfig {
@@ -287,6 +288,7 @@ export interface HardhatConfig {
   networks: NetworksConfig;
   solidity: SolidityConfig;
   mocha: Mocha.MochaOptions;
+  customCompilerPath: string;
 }
 
 // Plugins config functionality

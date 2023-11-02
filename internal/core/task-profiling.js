@@ -47,4 +47,3 @@ function flagParallelChildren(profile, isParentParallel = false) {
     }
 }
 exports.flagParallelChildren = flagParallelChildren;
-//# sourceMappingURL=task-profiling.js.map

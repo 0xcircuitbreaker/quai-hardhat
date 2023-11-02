@@ -47,4 +47,3 @@ function nullable(codec, name = `${codec.name} | null`) {
     return new t.Type(name, (u) => u === null || codec.is(u), (u, c) => (u === null ? t.success(null) : codec.validate(u, c)), (a) => (a === null ? null : codec.encode(a)));
 }
 exports.nullable = nullable;
-//# sourceMappingURL=io-ts.js.map

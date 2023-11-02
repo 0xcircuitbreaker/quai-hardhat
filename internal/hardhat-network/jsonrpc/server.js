@@ -79,4 +79,3 @@ class JsonRpcServer {
     }
 }
 exports.JsonRpcServer = JsonRpcServer;
-//# sourceMappingURL=server.js.map

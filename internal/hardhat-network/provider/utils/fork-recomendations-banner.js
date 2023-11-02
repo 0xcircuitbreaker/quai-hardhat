@@ -35,4 +35,3 @@ async function showForkRecommendationsBannerIfNecessary(currentNetworkConfig, fo
     await fs_extra_1.default.writeJSON(shownPath, true);
 }
 exports.showForkRecommendationsBannerIfNecessary = showForkRecommendationsBannerIfNecessary;
-//# sourceMappingURL=fork-recomendations-banner.js.map

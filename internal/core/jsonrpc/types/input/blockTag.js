@@ -52,4 +52,3 @@ exports.optionalRpcNewBlockTag = (0, io_ts_1.optionalOrNullable)(exports.rpcNewB
 // This is the old kind of block tag which is described in the ethereum wiki
 exports.rpcOldBlockTag = t.union([base_types_1.rpcQuantity, exports.rpcBlockTagName]);
 exports.optionalRpcOldBlockTag = (0, io_ts_1.optionalOrNullable)(exports.rpcOldBlockTag);
-//# sourceMappingURL=blockTag.js.map

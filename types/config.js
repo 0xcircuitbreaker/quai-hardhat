@@ -13,4 +13,3 @@
 // fields), we don't use `extends` as that can interfere with plugin authors
 // trying to augment the config types.
 Object.defineProperty(exports, "__esModule", { value: true });
-//# sourceMappingURL=config.js.map

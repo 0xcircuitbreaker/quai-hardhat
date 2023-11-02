@@ -145,4 +145,3 @@ exports.defaultSolcOutputSelection = {
         "": ["ast"],
     },
 };
-//# sourceMappingURL=default-config.js.map

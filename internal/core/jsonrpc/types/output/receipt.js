@@ -49,4 +49,3 @@ exports.rpcTransactionReceipt = t.type({
     type: (0, io_ts_1.optional)(base_types_1.rpcQuantity),
     effectiveGasPrice: (0, io_ts_1.optional)(base_types_1.rpcQuantity),
 }, "RpcTransactionReceipt");
-//# sourceMappingURL=receipt.js.map

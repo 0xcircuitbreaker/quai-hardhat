@@ -94,4 +94,3 @@ function topicMatched(normalizedTopics, logTopics) {
     return true;
 }
 exports.topicMatched = topicMatched;
-//# sourceMappingURL=filter.js.map

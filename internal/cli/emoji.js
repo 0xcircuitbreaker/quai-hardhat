@@ -10,4 +10,3 @@ function emoji(msgIfEnabled, msgIfDisabled = "") {
     return emojiEnabled ? msgIfEnabled : msgIfDisabled;
 }
 exports.emoji = emoji;
-//# sourceMappingURL=emoji.js.map

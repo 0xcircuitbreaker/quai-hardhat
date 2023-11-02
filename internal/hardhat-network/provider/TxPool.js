@@ -467,4 +467,3 @@ class TxPool {
     }
 }
 exports.TxPool = TxPool;
-//# sourceMappingURL=TxPool.js.map

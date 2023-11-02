@@ -34,4 +34,3 @@ async function putGenesisBlock(blockchain, common, { initialDate, blockGasLimit:
     await blockchain.putBlock(genesisBlock);
 }
 exports.putGenesisBlock = putGenesisBlock;
-//# sourceMappingURL=putGenesisBlock.js.map

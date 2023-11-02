@@ -37,4 +37,3 @@ exports.rpcLog = t.type({
     data: base_types_1.rpcData,
     topics: t.array(base_types_1.rpcData, "RpcData Array"),
 }, "RpcLog");
-//# sourceMappingURL=log.js.map

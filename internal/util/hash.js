@@ -15,4 +15,3 @@ function createNonCryptographicHashBasedIdentifier(input) {
     return createHash("md5").update(input).digest();
 }
 exports.createNonCryptographicHashBasedIdentifier = createNonCryptographicHashBasedIdentifier;
-//# sourceMappingURL=hash.js.map

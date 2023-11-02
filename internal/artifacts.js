@@ -678,4 +678,3 @@ function getArtifactFromContractOutput(sourceName, contractName, contractOutput)
     };
 }
 exports.getArtifactFromContractOutput = getArtifactFromContractOutput;
-//# sourceMappingURL=artifacts.js.map

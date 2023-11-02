@@ -17,4 +17,3 @@ async function makeStateTrie(genesisAccounts) {
     return stateTrie;
 }
 exports.makeStateTrie = makeStateTrie;
-//# sourceMappingURL=makeStateTrie.js.map

@@ -57,4 +57,3 @@ function hardforkGte(hardforkA, hardforkB) {
     return indexA >= indexB;
 }
 exports.hardforkGte = hardforkGte;
-//# sourceMappingURL=hardforks.js.map

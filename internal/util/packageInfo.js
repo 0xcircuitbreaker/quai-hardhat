@@ -51,4 +51,3 @@ function getProjectPackageJson() {
     return fs_extra_1.default.readJson(packageJsonPath);
 }
 exports.getProjectPackageJson = getProjectPackageJson;
-//# sourceMappingURL=packageInfo.js.map

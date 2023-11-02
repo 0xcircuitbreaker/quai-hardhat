@@ -113,4 +113,3 @@ function matchOpcodes(decodedTrace, firstStepIndex, opcodes) {
     }
     return true;
 }
-//# sourceMappingURL=mapped-inlined-internal-functions-heuristics.js.map

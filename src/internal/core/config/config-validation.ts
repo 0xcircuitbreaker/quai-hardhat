@@ -1,6 +1,8 @@
 import type { HardhatConfig as HardhatConfigT } from "../../../types";
 
 import * as t from "io-ts";
+import * as fs from 'fs';
+import * as path from 'path';
 import { Context, getFunctionName, ValidationError } from "io-ts/lib";
 import { Reporter } from "io-ts/lib/Reporter";
 
@@ -383,6 +385,31 @@ export function getValidationErrors(config: any): string[] {
       // Validating the accounts with io-ts leads to very confusing errors messages
       const { accounts, ...configExceptAccounts } = hardhatNetwork;
 
+      if (hardhatNetwork.customCompilerPath !== undefined) {
+        if (typeof hardhatNetwork.customCompilerPath !== 'string') {
+          throw new Error('Invalid customCompilerPath, must be a string');
+        }
+    
+        // Resolve the customCompilerPath in case it's relative
+        const resolvedPath = path.resolve(hardhatNetwork.customCompilerPath);
+    
+        // Check if the customCompilerPath exists
+        if (!fs.existsSync(resolvedPath)) {
+          throw new Error(`The customCompilerPath does not exist: ${resolvedPath}`);
+        }
+    
+        // Check if the customCompilerPath is a file
+        if (!fs.statSync(resolvedPath).isFile()) {
+          throw new Error(`The customCompilerPath is not a file: ${resolvedPath}`);
+        }
+    
+        // Optionally, check if the path points to an executable file, if that's a requirement
+        try {
+          fs.accessSync(resolvedPath, fs.constants.X_OK);
+        } catch {
+          throw new Error(`The customCompilerPath is not an executable file: ${resolvedPath}`);
+        }
+      }
       const netConfigResult = HardhatNetworkConfig.decode(configExceptAccounts);
       if (netConfigResult.isLeft()) {
         errors.push(

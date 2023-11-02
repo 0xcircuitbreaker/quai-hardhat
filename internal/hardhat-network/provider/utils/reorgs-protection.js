@@ -36,4 +36,3 @@ function getLargestPossibleReorg(networkId) {
 }
 exports.getLargestPossibleReorg = getLargestPossibleReorg;
 exports.FALLBACK_MAX_REORG = 30n;
-//# sourceMappingURL=reorgs-protection.js.map

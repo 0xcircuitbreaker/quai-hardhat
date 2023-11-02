@@ -15,4 +15,3 @@ function deriveKeyFromMnemonicAndPath(mnemonic, hdPath, passphrase) {
         : Buffer.from(derived.privateKey);
 }
 exports.deriveKeyFromMnemonicAndPath = deriveKeyFromMnemonicAndPath;
-//# sourceMappingURL=keys-derivation.js.map

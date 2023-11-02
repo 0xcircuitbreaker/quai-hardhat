@@ -42,4 +42,3 @@ exports.rpcTransactionRequest = t.type({
     maxFeePerGas: (0, io_ts_1.optionalOrNullable)(base_types_1.rpcQuantity),
     maxPriorityFeePerGas: (0, io_ts_1.optionalOrNullable)(base_types_1.rpcQuantity),
 }, "RpcTransactionRequest");
-//# sourceMappingURL=transactionRequest.js.map

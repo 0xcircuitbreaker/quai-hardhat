@@ -41,4 +41,3 @@ async function getRecommendedGitIgnore() {
     return fs_extra_1.default.readFile(gitIgnorePath, "utf-8");
 }
 exports.getRecommendedGitIgnore = getRecommendedGitIgnore;
-//# sourceMappingURL=project-structure.js.map

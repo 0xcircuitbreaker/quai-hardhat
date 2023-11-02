@@ -150,4 +150,3 @@ function writePromptedForHHVSCode() {
     fs_extra_1.default.writeFileSync(extensionPromptedPath, "{}");
 }
 exports.writePromptedForHHVSCode = writePromptedForHHVSCode;
-//# sourceMappingURL=global-dir.js.map

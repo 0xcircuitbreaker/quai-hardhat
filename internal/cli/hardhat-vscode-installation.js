@@ -38,4 +38,3 @@ function installHardhatVSCode() {
     }
 }
 exports.installHardhatVSCode = installHardhatVSCode;
-//# sourceMappingURL=hardhat-vscode-installation.js.map

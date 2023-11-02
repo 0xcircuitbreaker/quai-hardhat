@@ -34,4 +34,3 @@ exports.rpcCompilerOutput = t.type({
     sources: t.any,
     contracts: t.any,
 }, "RpcCompilerOutput");
-//# sourceMappingURL=solc.js.map

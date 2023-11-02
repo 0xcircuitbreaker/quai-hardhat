@@ -9,4 +9,3 @@ function keccak256(data) {
     return (0, keccak_1.default)("keccak256").update(data).digest();
 }
 exports.keccak256 = keccak256;
-//# sourceMappingURL=keccak.js.map

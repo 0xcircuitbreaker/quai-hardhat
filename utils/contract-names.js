@@ -137,4 +137,3 @@ function findDistance(a, b) {
     return dd;
 }
 exports.findDistance = findDistance;
-//# sourceMappingURL=contract-names.js.map

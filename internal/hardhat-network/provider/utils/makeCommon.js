@@ -14,4 +14,3 @@ function makeCommon({ chainId, networkId, hardfork, enableTransientStorage, }) {
     return common;
 }
 exports.makeCommon = makeCommon;
-//# sourceMappingURL=makeCommon.js.map

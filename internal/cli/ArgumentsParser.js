@@ -178,4 +178,3 @@ class ArgumentsParser {
 }
 ArgumentsParser.PARAM_PREFIX = "--";
 exports.ArgumentsParser = ArgumentsParser;
-//# sourceMappingURL=ArgumentsParser.js.map

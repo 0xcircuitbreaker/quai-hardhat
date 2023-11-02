@@ -14,4 +14,3 @@ function unsafeObjectEntries(o) {
     return Object.entries(o);
 }
 exports.unsafeObjectEntries = unsafeObjectEntries;
-//# sourceMappingURL=unsafe.js.map

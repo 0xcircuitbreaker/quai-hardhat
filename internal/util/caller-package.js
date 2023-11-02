@@ -39,4 +39,3 @@ function getClosestCallerPackage() {
     return undefined;
 }
 exports.getClosestCallerPackage = getClosestCallerPackage;
-//# sourceMappingURL=caller-package.js.map

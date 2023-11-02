@@ -29,6 +29,7 @@ function resolveConfig(userConfigPath, userConfig) {
         networks: resolveNetworksConfig(userConfig.networks),
         solidity: resolveSolidityConfig(userConfig),
         mocha: resolveMochaConfig(userConfig),
+        customCompilerPath: resolveCustomCompilerPath(userConfig),
     };
 }
 exports.resolveConfig = resolveConfig;
@@ -284,6 +285,9 @@ function resolveMochaConfig(userConfig) {
         ...userConfig.mocha,
     };
 }
+function resolveCustomCompilerPath(userConfig) {
+    return userConfig.customCompilerPath ?? "";
+}
 /**
  * This function resolves the ProjectPathsConfig object from the user-provided config
  * and its path. The logic of this is not obvious and should well be document.
@@ -317,4 +321,3 @@ function resolvePathFrom(from, defaultPath, relativeOrAbsolutePath = defaultPath
     }
     return path_1.default.join(from, relativeOrAbsolutePath);
 }
-//# sourceMappingURL=config-resolution.js.map

@@ -243,4 +243,3 @@ class HardhatNetworkProvider extends events_1.EventEmitter {
     }
 }
 exports.HardhatNetworkProvider = HardhatNetworkProvider;
-//# sourceMappingURL=provider.js.map

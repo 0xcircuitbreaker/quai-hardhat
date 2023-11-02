@@ -1178,4 +1178,3 @@ A fully qualified name should look like file.sol:Contract`,
  * We let it be a literal, and use this variable to enforce the types
  */
 const _PHONY_VARIABLE_TO_FORCE_ERRORS_TO_BE_OF_TYPE_ERROR_DESCRIPTOR = exports.ERRORS;
-//# sourceMappingURL=errors-list.js.map

@@ -44,4 +44,3 @@ class NetModule {
     }
 }
 exports.NetModule = NetModule;
-//# sourceMappingURL=net.js.map

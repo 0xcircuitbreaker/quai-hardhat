@@ -204,4 +204,3 @@ AutomaticGasPriceProvider.EIP1559_BASE_FEE_MAX_FULL_BLOCKS_PREFERENCE = 3n;
 // See eth_feeHistory for an explanation of what this means
 AutomaticGasPriceProvider.EIP1559_REWARD_PERCENTILE = 50;
 exports.AutomaticGasPriceProvider = AutomaticGasPriceProvider;
-//# sourceMappingURL=gas-providers.js.map

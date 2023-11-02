@@ -46,4 +46,3 @@ function validateParams(params, ...types) {
     return decoded;
 }
 exports.validateParams = validateParams;
-//# sourceMappingURL=validation.js.map

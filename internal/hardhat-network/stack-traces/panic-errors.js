@@ -31,4 +31,3 @@ function panicErrorCodeToReason(errorCode) {
             return "Called a zero-initialized variable of internal function type";
     }
 }
-//# sourceMappingURL=panic-errors.js.map

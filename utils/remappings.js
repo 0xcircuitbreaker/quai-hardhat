@@ -12,4 +12,3 @@ function applyRemappings(remappings, sourceName) {
     return sourceName.replace(selectedRemapping.from, selectedRemapping.to);
 }
 exports.applyRemappings = applyRemappings;
-//# sourceMappingURL=remappings.js.map

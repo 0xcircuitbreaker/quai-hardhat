@@ -209,4 +209,3 @@ Private Key: ${privateKey}`;
         throw error;
     }
 });
-//# sourceMappingURL=node.js.map

@@ -141,4 +141,3 @@ class BlockchainBase {
     }
 }
 exports.BlockchainBase = BlockchainBase;
-//# sourceMappingURL=BlockchainBase.js.map

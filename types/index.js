@@ -20,4 +20,3 @@ __exportStar(require("./provider"), exports);
 __exportStar(require("./runtime"), exports);
 __exportStar(require("./artifacts"), exports);
 __exportStar(require("./builtin-tasks"), exports);
-//# sourceMappingURL=index.js.map

@@ -134,4 +134,3 @@ function checkIsFeeMarketEIP1559ValuesArray(values) {
         }
     }
 }
-//# sourceMappingURL=FakeSenderEIP1559Transaction.js.map

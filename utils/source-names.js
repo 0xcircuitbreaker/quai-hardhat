@@ -198,4 +198,3 @@ async function includesOwnPackageName(sourceName) {
     return false;
 }
 exports.includesOwnPackageName = includesOwnPackageName;
-//# sourceMappingURL=source-names.js.map

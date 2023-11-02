@@ -163,4 +163,3 @@ class SolidityTracer {
     }
 }
 exports.SolidityTracer = SolidityTracer;
-//# sourceMappingURL=solidityTracer.js.map

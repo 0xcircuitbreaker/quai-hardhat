@@ -15,4 +15,3 @@ function mapValues(o, callback) {
     return result;
 }
 exports.mapValues = mapValues;
-//# sourceMappingURL=lang.js.map

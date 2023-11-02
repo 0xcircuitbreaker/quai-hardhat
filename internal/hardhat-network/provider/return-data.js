@@ -51,4 +51,3 @@ class ReturnData {
     }
 }
 exports.ReturnData = ReturnData;
-//# sourceMappingURL=return-data.js.map

@@ -82,4 +82,3 @@ async function main() {
     log("sentry event was sent");
 }
 main().catch(console.error);
-//# sourceMappingURL=subprocess.js.map

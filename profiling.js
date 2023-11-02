@@ -29,4 +29,3 @@ function adhocProfileSync(name, f) {
     return globalAsAny.adhocProfileSync(name, f);
 }
 exports.adhocProfileSync = adhocProfileSync;
-//# sourceMappingURL=profiling.js.map

@@ -66,4 +66,3 @@ exports.rpcBlockWithTransactions = t.type({
     ...baseBlockResponse,
     transactions: t.array(transaction_1.rpcTransaction, "RpcTransaction Array"),
 }, "RpcBlockWithTransactions");
-//# sourceMappingURL=block.js.map

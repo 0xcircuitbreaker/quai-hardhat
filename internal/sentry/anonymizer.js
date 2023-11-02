@@ -287,4 +287,3 @@ function getAllWordMatches(errorMessage) {
     }
     return matches;
 }
-//# sourceMappingURL=anonymizer.js.map

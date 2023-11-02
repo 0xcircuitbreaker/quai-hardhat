@@ -88,4 +88,3 @@ ReadOnlyValidTransactionPrototype._getMessageToSign = function () {
 ReadOnlyValidTransactionPrototype._processSignature = function () {
     throw new errors_1.InternalError("`_processSignature` is not implemented in ReadOnlyValidTransaction");
 };
-//# sourceMappingURL=ReadOnlyValidTransaction.js.map

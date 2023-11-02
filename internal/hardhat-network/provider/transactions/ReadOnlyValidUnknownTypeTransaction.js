@@ -84,4 +84,3 @@ ReadOnlyValidUnknownTypeTransactionPrototype._getMessageToSign = function () {
 ReadOnlyValidUnknownTypeTransactionPrototype._processSignature = function () {
     throw new errors_1.InternalError("`_processSignature` is not implemented in ReadOnlyValidUnknownTypeTransaction");
 };
-//# sourceMappingURL=ReadOnlyValidUnknownTypeTransaction.js.map

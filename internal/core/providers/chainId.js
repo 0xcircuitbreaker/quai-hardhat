@@ -55,4 +55,3 @@ class ChainIdValidatorProvider extends ProviderWrapperWithChainId {
     }
 }
 exports.ChainIdValidatorProvider = ChainIdValidatorProvider;
-//# sourceMappingURL=chainId.js.map

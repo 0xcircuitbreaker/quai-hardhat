@@ -26,4 +26,3 @@ function rpcToTxData(rpcTransaction) {
     };
 }
 exports.rpcToTxData = rpcToTxData;
-//# sourceMappingURL=rpcToTxData.js.map

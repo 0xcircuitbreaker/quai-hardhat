@@ -94,4 +94,3 @@ class ReadOnlyValidEIP1559Transaction extends ethereumjs_tx_1.FeeMarketEIP1559Tr
     }
 }
 exports.ReadOnlyValidEIP1559Transaction = ReadOnlyValidEIP1559Transaction;
-//# sourceMappingURL=ReadOnlyValidEIP1559Transaction.js.map

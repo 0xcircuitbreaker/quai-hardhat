@@ -37,6 +37,7 @@ import {
 import { getPackageJson } from "../util/packageInfo";
 
 import { saveFlamegraph } from "../core/flamegraph";
+import { setConfig } from "../util/configStore";
 import { Analytics } from "./analytics";
 import { ArgumentsParser } from "./ArgumentsParser";
 import { enableEmoji } from "./emoji";
@@ -204,6 +205,8 @@ async function main() {
         showSolidityConfigWarnings,
       }
     );
+
+    setConfig(resolvedConfig)
 
     let telemetryConsent: boolean | undefined = hasConsentedTelemetry();
 

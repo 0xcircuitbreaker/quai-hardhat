@@ -31,4 +31,3 @@ class ProviderWrapper extends event_emitter_1.EventEmitterWrapper {
     }
 }
 exports.ProviderWrapper = ProviderWrapper;
-//# sourceMappingURL=wrapper.js.map

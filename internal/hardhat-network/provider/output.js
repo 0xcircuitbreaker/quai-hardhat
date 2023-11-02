@@ -250,4 +250,3 @@ function shouldShowEffectiveGasPriceForHardfork(common) {
     return common.gteHardfork(FIRST_HARDFORK_WITH_EIP1559);
 }
 exports.shouldShowEffectiveGasPriceForHardfork = shouldShowEffectiveGasPriceForHardfork;
-//# sourceMappingURL=output.js.map

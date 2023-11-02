@@ -134,4 +134,3 @@ function checkIsAccessListEIP2930ValuesArray(values) {
         }
     }
 }
-//# sourceMappingURL=FakeSenderAccessListEIP2930Transaction.js.map

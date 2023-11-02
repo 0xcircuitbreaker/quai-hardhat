@@ -138,4 +138,3 @@ function checkIsFlatBufferArray(values) {
         }
     }
 }
-//# sourceMappingURL=FakeSenderTransaction.js.map

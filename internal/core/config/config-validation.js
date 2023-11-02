@@ -25,6 +25,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateResolvedConfig = exports.getValidationErrors = exports.validateConfig = exports.decimalString = exports.address = exports.hexString = exports.DotPathReporter = exports.success = exports.failure = void 0;
 const t = __importStar(require("io-ts"));
+const fs = __importStar(require("fs"));
+const path = __importStar(require("path"));
 const lib_1 = require("io-ts/lib");
 const constants_1 = require("../../constants");
 const io_ts_1 = require("../../util/io-ts");
@@ -267,6 +269,28 @@ function getValidationErrors(config) {
             }
             // Validating the accounts with io-ts leads to very confusing errors messages
             const { accounts, ...configExceptAccounts } = hardhatNetwork;
+            if (hardhatNetwork.customCompilerPath !== undefined) {
+                if (typeof hardhatNetwork.customCompilerPath !== 'string') {
+                    throw new Error('Invalid customCompilerPath, must be a string');
+                }
+                // Resolve the customCompilerPath in case it's relative
+                const resolvedPath = path.resolve(hardhatNetwork.customCompilerPath);
+                // Check if the customCompilerPath exists
+                if (!fs.existsSync(resolvedPath)) {
+                    throw new Error(`The customCompilerPath does not exist: ${resolvedPath}`);
+                }
+                // Check if the customCompilerPath is a file
+                if (!fs.statSync(resolvedPath).isFile()) {
+                    throw new Error(`The customCompilerPath is not a file: ${resolvedPath}`);
+                }
+                // Optionally, check if the path points to an executable file, if that's a requirement
+                try {
+                    fs.accessSync(resolvedPath, fs.constants.X_OK);
+                }
+                catch {
+                    throw new Error(`The customCompilerPath is not an executable file: ${resolvedPath}`);
+                }
+            }
             const netConfigResult = HardhatNetworkConfig.decode(configExceptAccounts);
             if (netConfigResult.isLeft()) {
                 errors.push(getErrorMessage(`HardhatConfig.networks.${constants_1.HARDHAT_NETWORK_NAME}`, hardhatNetwork, "HardhatNetworkConfig"));
@@ -387,4 +411,3 @@ function validateResolvedConfig(resolvedConfig) {
     }
 }
 exports.validateResolvedConfig = validateResolvedConfig;
-//# sourceMappingURL=config-validation.js.map

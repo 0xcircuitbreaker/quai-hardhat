@@ -18,4 +18,3 @@ exports.CustomError = void 0;
 __exportStar(require("./bigInt"), exports);
 var errors_1 = require("../internal/core/errors");
 Object.defineProperty(exports, "CustomError", { enumerable: true, get: function () { return errors_1.CustomError; } });
-//# sourceMappingURL=index.js.map

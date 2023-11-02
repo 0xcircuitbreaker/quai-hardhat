@@ -32,4 +32,3 @@ const rpcAccessListTuple = t.type({
     storageKeys: (0, io_ts_1.nullable)(t.array(base_types_1.rpcData)),
 });
 exports.rpcAccessList = t.array(rpcAccessListTuple);
-//# sourceMappingURL=access-list.js.map

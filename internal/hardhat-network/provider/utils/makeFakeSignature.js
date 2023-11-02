@@ -28,4 +28,3 @@ function makeFakeSignature(tx, sender) {
     };
 }
 exports.makeFakeSignature = makeFakeSignature;
-//# sourceMappingURL=makeFakeSignature.js.map

@@ -50,4 +50,3 @@ function isNow() {
 function isAwsCodeBuild() {
     return process.env.CODEBUILD_BUILD_NUMBER !== undefined;
 }
-//# sourceMappingURL=ci-detection.js.map

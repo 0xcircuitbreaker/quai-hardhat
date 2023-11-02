@@ -27,4 +27,3 @@ function replaceAll(str, toReplace, replacement) {
     return str.split(toReplace).join(replacement);
 }
 exports.replaceAll = replaceAll;
-//# sourceMappingURL=strings.js.map

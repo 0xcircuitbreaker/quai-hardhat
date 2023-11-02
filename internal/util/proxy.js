@@ -16,4 +16,3 @@ function shouldUseProxy(url) {
     return true;
 }
 exports.shouldUseProxy = shouldUseProxy;
-//# sourceMappingURL=proxy.js.map

@@ -1079,4 +1079,3 @@ You can use them by running Hardhat Network with 'hardfork' ${EIP1559_MIN_HARDFO
     }
 }
 exports.EthModule = EthModule;
-//# sourceMappingURL=eth.js.map

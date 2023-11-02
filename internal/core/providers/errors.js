@@ -107,4 +107,3 @@ class InvalidResponseError extends ProviderError {
 }
 InvalidResponseError.CODE = -32999;
 exports.InvalidResponseError = InvalidResponseError;
-//# sourceMappingURL=errors.js.map

@@ -74,4 +74,3 @@ exports.loadTsNode = loadTsNode;
 function isTypescriptFile(path) {
     return path.endsWith(".ts");
 }
-//# sourceMappingURL=typescript-support.js.map

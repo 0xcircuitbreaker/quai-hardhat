@@ -59,4 +59,3 @@ function reorganizeTransactionsLists(pending, queued, retrieveNonce) {
     };
 }
 exports.reorganizeTransactionsLists = reorganizeTransactionsLists;
-//# sourceMappingURL=reorganizeTransactionsLists.js.map

@@ -13,4 +13,3 @@ function getDifferenceInSeconds(a, b) {
     return Math.floor((a.valueOf() - b.valueOf()) / 1000);
 }
 exports.getDifferenceInSeconds = getDifferenceInSeconds;
-//# sourceMappingURL=date.js.map

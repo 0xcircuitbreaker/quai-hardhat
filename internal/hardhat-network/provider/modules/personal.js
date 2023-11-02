@@ -28,4 +28,3 @@ class PersonalModule {
     }
 }
 exports.PersonalModule = PersonalModule;
-//# sourceMappingURL=personal.js.map

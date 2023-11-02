@@ -30,6 +30,7 @@ const os_1 = __importDefault(require("os"));
 const chalk_1 = __importDefault(require("chalk"));
 const debug_1 = __importDefault(require("debug"));
 const fs_extra_1 = __importDefault(require("fs-extra"));
+const path_1 = __importDefault(require("path"));
 const semver_1 = __importDefault(require("semver"));
 const aggregate_error_1 = __importDefault(require("aggregate-error"));
 const artifacts_1 = require("../internal/artifacts");
@@ -39,11 +40,9 @@ const errors_list_1 = require("../internal/core/errors-list");
 const compilation_job_1 = require("../internal/solidity/compilation-job");
 const compiler_1 = require("../internal/solidity/compiler");
 const compiler_input_1 = require("../internal/solidity/compiler/compiler-input");
-const downloader_1 = require("../internal/solidity/compiler/downloader");
 const dependencyGraph_1 = require("../internal/solidity/dependencyGraph");
 const parse_1 = require("../internal/solidity/parse");
 const resolver_1 = require("../internal/solidity/resolver");
-const global_dir_1 = require("../internal/util/global-dir");
 const strings_1 = require("../internal/util/strings");
 const builtin_tasks_1 = require("../types/builtin-tasks");
 const contract_names_1 = require("../utils/contract-names");
@@ -51,6 +50,7 @@ const source_names_1 = require("../utils/source-names");
 const fs_utils_1 = require("../internal/util/fs-utils");
 const task_names_1 = require("./task-names");
 const solidity_files_cache_1 = require("./utils/solidity-files-cache");
+const configStore_1 = require("../internal/util/configStore");
 function isConsoleLogError(error) {
     const message = error.message;
     return (error.type === "TypeError" &&
@@ -329,44 +329,42 @@ const DEFAULT_CONCURRENCY_LEVEL = Math.max(os_1.default.cpus().length - 1, 1);
     .addParam("quiet", undefined, undefined, config_env_1.types.boolean)
     .addParam("solcVersion", undefined, undefined, config_env_1.types.string)
     .setAction(async ({ quiet, solcVersion, }, { run }) => {
-    const compilersCache = await (0, global_dir_1.getCompilersDir)();
-    const compilerPlatform = downloader_1.CompilerDownloader.getCompilerPlatform();
-    const downloader = downloader_1.CompilerDownloader.getConcurrencySafeDownloader(compilerPlatform, compilersCache);
-    const isCompilerDownloaded = await downloader.isCompilerDownloaded(solcVersion);
-    if (!isCompilerDownloaded) {
-        await run(task_names_1.TASK_COMPILE_SOLIDITY_LOG_DOWNLOAD_COMPILER_START, {
-            solcVersion,
-            isCompilerDownloaded,
-            quiet,
-        });
-        await downloader.downloadCompiler(solcVersion);
-        await run(task_names_1.TASK_COMPILE_SOLIDITY_LOG_DOWNLOAD_COMPILER_END, {
-            solcVersion,
-            isCompilerDownloaded,
-            quiet,
-        });
+    const customCompilerPath = (0, configStore_1.getCustomCompilerPath)();
+    const resolvedPath = path_1.default.resolve(customCompilerPath);
+    // Check if the customCompilerPath exists
+    if (!fs_extra_1.default.existsSync(resolvedPath)) {
+        console.log('\x1b[1m\x1b[31m%s\x1b[0m%s', 'Error:', ' Path not found: ' + resolvedPath);
+        process.exit();
     }
-    const compiler = await downloader.getCompiler(solcVersion);
+    // Check if the customCompilerPath is a file
+    if (!fs_extra_1.default.statSync(resolvedPath).isFile()) {
+        console.log('\x1b[1m\x1b[31m%s\x1b[0m%s', 'Error:', ' Path is not a file: ' + resolvedPath);
+        process.exit();
+    }
+    // Optionally, check if the path points to an executable file, if that's a requirement
+    try {
+        fs_extra_1.default.accessSync(resolvedPath, fs_extra_1.default.constants.X_OK);
+    }
+    catch {
+        console.log('\x1b[1m\x1b[31m%s\x1b[0m%s', 'Error:', ' File at path is not an executable: ' + resolvedPath);
+        process.exit();
+    }
+    const compiler = {
+        version: 'Solx',
+        longVersion: 'Solidity X',
+        compilerPath: resolvedPath,
+        isSolcJs: false // or false
+    };
     if (compiler !== undefined) {
         return compiler;
     }
     log("Native solc binary doesn't work, using solcjs instead. Try running npx hardhat clean --global");
-    const wasmDownloader = downloader_1.CompilerDownloader.getConcurrencySafeDownloader(downloader_1.CompilerPlatform.WASM, compilersCache);
-    const isWasmCompilerDownloader = await wasmDownloader.isCompilerDownloaded(solcVersion);
-    if (!isWasmCompilerDownloader) {
-        await run(task_names_1.TASK_COMPILE_SOLIDITY_LOG_DOWNLOAD_COMPILER_START, {
-            solcVersion,
-            isCompilerDownloaded,
-            quiet,
-        });
-        await wasmDownloader.downloadCompiler(solcVersion);
-        await run(task_names_1.TASK_COMPILE_SOLIDITY_LOG_DOWNLOAD_COMPILER_END, {
-            solcVersion,
-            isCompilerDownloaded,
-            quiet,
-        });
-    }
-    const wasmCompiler = await wasmDownloader.getCompiler(solcVersion);
+    const wasmCompiler = {
+        version: 'Solx',
+        longVersion: 'Solidity X',
+        compilerPath: resolvedPath,
+        isSolcJs: true // or false
+    };
     (0, errors_1.assertHardhatInvariant)(wasmCompiler !== undefined, `WASM build of solc ${solcVersion} isn't working`);
     return wasmCompiler;
 });
@@ -919,4 +917,3 @@ function getFormattedInternalCompilerErrorMessage(error) {
     // and then trim just in case a blank space was left
     return `${error.type}: ${error.message}`.replace(/[:\s]*$/g, "").trim();
 }
-//# sourceMappingURL=compile.js.map

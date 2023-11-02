@@ -210,4 +210,3 @@ class HttpProvider extends events_1.EventEmitter {
     }
 }
 exports.HttpProvider = HttpProvider;
-//# sourceMappingURL=http.js.map

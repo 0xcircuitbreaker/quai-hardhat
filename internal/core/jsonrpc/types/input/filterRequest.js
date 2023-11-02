@@ -38,4 +38,3 @@ exports.rpcFilterRequest = t.type({
     blockHash: (0, io_ts_1.optionalOrNullable)(base_types_1.rpcHash),
 }, "RpcFilterRequest");
 exports.optionalRpcFilterRequest = (0, io_ts_1.optionalOrNullable)(exports.rpcFilterRequest);
-//# sourceMappingURL=filterRequest.js.map

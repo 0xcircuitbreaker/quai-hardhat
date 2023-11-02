@@ -12,4 +12,3 @@ ethereumjs_tx_1.TransactionFactory.fromTxData = function (txData, txOptions) {
     }
     return previousFromTxData.call(this, txData, txOptions);
 };
-//# sourceMappingURL=ethereumjs-workarounds.js.map

@@ -21,4 +21,3 @@ const task_names_1 = require("./task-names");
     await fs_extra_1.default.remove(config.paths.artifacts);
     artifacts.clearCache?.();
 });
-//# sourceMappingURL=clean.js.map

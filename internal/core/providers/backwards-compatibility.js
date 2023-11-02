@@ -63,4 +63,3 @@ class BackwardsCompatibilityProviderAdapter extends event_emitter_1.EventEmitter
     }
 }
 exports.BackwardsCompatibilityProviderAdapter = BackwardsCompatibilityProviderAdapter;
-//# sourceMappingURL=backwards-compatibility.js.map

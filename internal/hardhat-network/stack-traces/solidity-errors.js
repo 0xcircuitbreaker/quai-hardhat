@@ -264,4 +264,3 @@ class SolidityCallSite {
         return false;
     }
 }
-//# sourceMappingURL=solidity-errors.js.map

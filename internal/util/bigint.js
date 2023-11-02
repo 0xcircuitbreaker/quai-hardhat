@@ -57,4 +57,3 @@ function toHex(x) {
     return `0x${x.toString(16)}`;
 }
 exports.toHex = toHex;
-//# sourceMappingURL=bigint.js.map

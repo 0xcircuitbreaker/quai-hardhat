@@ -175,4 +175,3 @@ class BlockchainData {
     }
 }
 exports.BlockchainData = BlockchainData;
-//# sourceMappingURL=BlockchainData.js.map

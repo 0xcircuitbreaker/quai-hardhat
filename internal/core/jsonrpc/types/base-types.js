@@ -147,4 +147,3 @@ function isInteger(num) {
 function isNumber(num) {
     return typeof num === "number";
 }
-//# sourceMappingURL=base-types.js.map

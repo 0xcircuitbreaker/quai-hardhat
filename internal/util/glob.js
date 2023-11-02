@@ -53,4 +53,3 @@ function globSync(pattern, options = {}) {
     return files.map(path.normalize);
 }
 exports.globSync = globSync;
-//# sourceMappingURL=glob.js.map

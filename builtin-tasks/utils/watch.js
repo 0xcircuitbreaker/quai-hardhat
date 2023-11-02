@@ -68,4 +68,3 @@ async function watchCompilerOutput(provider, paths) {
         .on("add", addCompilationResult);
 }
 exports.watchCompilerOutput = watchCompilerOutput;
-//# sourceMappingURL=watch.js.map

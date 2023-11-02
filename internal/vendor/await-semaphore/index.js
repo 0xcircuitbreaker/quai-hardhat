@@ -61,4 +61,3 @@ class Mutex extends Semaphore {
     }
 }
 exports.Mutex = Mutex;
-//# sourceMappingURL=index.js.map

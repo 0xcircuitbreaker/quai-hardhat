@@ -120,4 +120,3 @@ async function confirmationPromptWithTimeout(name, message, timeoutMilliseconds 
         throw e;
     }
 }
-//# sourceMappingURL=prompt.js.map

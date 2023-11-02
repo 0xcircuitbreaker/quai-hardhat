@@ -142,4 +142,3 @@ async function getHardhatVersion() {
     const { version } = await (0, packageInfo_1.getPackageJson)();
     return `Hardhat ${version}`;
 }
-//# sourceMappingURL=analytics.js.map

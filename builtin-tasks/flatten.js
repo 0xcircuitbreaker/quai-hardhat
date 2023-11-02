@@ -207,4 +207,3 @@ function replacePragmaAbicoderDirectives(file) {
         console.warn(chalk_1.default.yellow(`\nThe flattened file is using the pragma abicoder directive '${metadata.pragmaDirective}' but these files have a different pragma abicoder directive: ${metadata.filesWithDifferentPragmaDirectives.join(", ")}`));
     }
 });
-//# sourceMappingURL=flatten.js.map

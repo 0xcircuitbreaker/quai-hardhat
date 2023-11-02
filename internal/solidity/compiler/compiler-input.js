@@ -20,4 +20,3 @@ function getInputFromCompilationJob(compilationJob) {
     };
 }
 exports.getInputFromCompilationJob = getInputFromCompilationJob;
-//# sourceMappingURL=compiler-input.js.map

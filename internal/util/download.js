@@ -75,4 +75,3 @@ async function download(url, filePath, timeoutMillis = 10000, extraHeaders = {})
     throw new Error(`Failed to download ${url} - ${response.statusCode} received. ${text}`);
 }
 exports.download = download;
-//# sourceMappingURL=download.js.map

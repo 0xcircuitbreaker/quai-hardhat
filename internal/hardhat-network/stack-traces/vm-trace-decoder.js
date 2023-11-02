@@ -21,4 +21,3 @@ class VmTraceDecoder {
     }
 }
 exports.VmTraceDecoder = VmTraceDecoder;
-//# sourceMappingURL=vm-trace-decoder.js.map

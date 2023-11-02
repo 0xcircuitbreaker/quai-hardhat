@@ -9,4 +9,3 @@ function txMapToArray(transactions) {
     return (0, flatten_1.default)(Array.from(transactions.values())).map((tx) => tx.data);
 }
 exports.txMapToArray = txMapToArray;
-//# sourceMappingURL=txMapToArray.js.map

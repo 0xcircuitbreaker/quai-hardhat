@@ -30,4 +30,3 @@ exports.rpcSubscribeRequest = t.keyof({
     newPendingTransactions: null,
     logs: null,
 }, "RpcSubscribe");
-//# sourceMappingURL=subscribeRequest.js.map

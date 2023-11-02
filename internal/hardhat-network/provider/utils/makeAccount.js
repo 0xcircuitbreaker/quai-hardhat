@@ -17,4 +17,3 @@ function makeAccount(ga) {
     return { account, address };
 }
 exports.makeAccount = makeAccount;
-//# sourceMappingURL=makeAccount.js.map

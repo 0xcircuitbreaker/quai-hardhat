@@ -29,4 +29,3 @@ const io_ts_1 = require("../../../../util/io-ts");
 const base_types_1 = require("../base-types");
 exports.rpcLogAddress = t.union([base_types_1.rpcAddress, t.array(base_types_1.rpcAddress)]);
 exports.optionalRpcLogAddress = (0, io_ts_1.optionalOrNullable)(exports.rpcLogAddress);
-//# sourceMappingURL=logAddress.js.map

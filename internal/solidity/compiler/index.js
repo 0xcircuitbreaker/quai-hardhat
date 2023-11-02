@@ -96,4 +96,3 @@ class NativeCompiler {
     }
 }
 exports.NativeCompiler = NativeCompiler;
-//# sourceMappingURL=index.js.map

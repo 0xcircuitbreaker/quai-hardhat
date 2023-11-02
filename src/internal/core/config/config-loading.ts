@@ -128,7 +128,6 @@ export function loadConfigAndTasks(
     checkUnsupportedSolidityConfig(resolved);
     checkUnsupportedRemappings(resolved);
   }
-
   return { resolvedConfig: resolved, userConfig: frozenUserConfig };
 }
 

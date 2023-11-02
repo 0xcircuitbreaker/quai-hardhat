@@ -37,4 +37,3 @@ exports.UNRECOGNIZED_FUNCTION_NAME = "<unrecognized-selector>";
 exports.UNKNOWN_FUNCTION_NAME = "<unknown>";
 exports.PRECOMPILE_FUNCTION_NAME = "<precompile>";
 exports.UNRECOGNIZED_CONTRACT_NAME = "<UnrecognizedContract>";
-//# sourceMappingURL=solidity-stack-trace.js.map

@@ -32,4 +32,3 @@ exports.rpcDebugTracingConfig = (0, io_ts_1.optionalOrNullable)(t.type({
     disableMemory: (0, io_ts_1.optionalOrNullable)(t.boolean),
     disableStack: (0, io_ts_1.optionalOrNullable)(t.boolean),
 }, "RpcDebugTracingConfig"));
-//# sourceMappingURL=debugTraceTransaction.js.map

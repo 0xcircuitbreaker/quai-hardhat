@@ -38,4 +38,3 @@ exports.makePoolState = (0, immutable_1.Record)({
     hashToTransaction: (0, immutable_1.Map)(),
     blockGasLimit: BigIntUtils.toHex(9500000),
 });
-//# sourceMappingURL=PoolState.js.map

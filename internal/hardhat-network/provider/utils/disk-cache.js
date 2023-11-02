@@ -9,4 +9,3 @@ function getForkCacheDirPath(paths) {
     return path_1.default.join(paths.cache, "hardhat-network-fork");
 }
 exports.getForkCacheDirPath = getForkCacheDirPath;
-//# sourceMappingURL=disk-cache.js.map

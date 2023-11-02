@@ -29,4 +29,3 @@ const io_ts_1 = require("../../../../util/io-ts");
 const base_types_1 = require("../base-types");
 exports.rpcLogTopics = t.array(t.union([t.null, base_types_1.rpcHash, t.array(t.union([t.null, base_types_1.rpcHash]))]));
 exports.optionalRpcLogTopics = (0, io_ts_1.optionalOrNullable)(exports.rpcLogTopics);
-//# sourceMappingURL=logTopics.js.map

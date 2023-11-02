@@ -186,4 +186,3 @@ function createLazyProxy(targetCreator, dummyTargetCreator, validator) {
     }
     return new Proxy(dummyTarget, handler);
 }
-//# sourceMappingURL=lazy.js.map

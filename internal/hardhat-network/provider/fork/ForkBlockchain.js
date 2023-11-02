@@ -269,4 +269,3 @@ class ForkBlockchain extends BlockchainBase_1.BlockchainBase {
     }
 }
 exports.ForkBlockchain = ForkBlockchain;
-//# sourceMappingURL=ForkBlockchain.js.map

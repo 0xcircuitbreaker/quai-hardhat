@@ -9,4 +9,3 @@ function getCurrentTimestampBigInt() {
     return BigInt(getCurrentTimestamp());
 }
 exports.getCurrentTimestampBigInt = getCurrentTimestampBigInt;
-//# sourceMappingURL=getCurrentTimestamp.js.map

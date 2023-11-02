@@ -29,4 +29,3 @@ if (!context_1.HardhatContext.isCreated()) {
     ctx.setHardhatRuntimeEnvironment(env);
     env.injectToGlobal();
 }
-//# sourceMappingURL=register.js.map

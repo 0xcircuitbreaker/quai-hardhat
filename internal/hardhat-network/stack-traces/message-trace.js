@@ -25,4 +25,3 @@ function isEvmStep(step) {
     return "pc" in step && step.pc !== undefined;
 }
 exports.isEvmStep = isEvmStep;
-//# sourceMappingURL=message-trace.js.map

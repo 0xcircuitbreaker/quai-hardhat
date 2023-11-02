@@ -435,4 +435,3 @@ async function getDependencies(projectType) {
             : {}),
     };
 }
-//# sourceMappingURL=project-creation.js.map

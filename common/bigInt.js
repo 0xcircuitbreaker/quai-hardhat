@@ -90,4 +90,3 @@ function formatNumberType(n) {
     return typeof n;
 }
 exports.formatNumberType = formatNumberType;
-//# sourceMappingURL=bigInt.js.map

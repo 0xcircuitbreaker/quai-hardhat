@@ -15,4 +15,3 @@ const task_names_1 = require("./task-names");
     }
     helpPrinter.printGlobalHelp();
 });
-//# sourceMappingURL=help.js.map

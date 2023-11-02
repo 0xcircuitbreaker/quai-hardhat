@@ -95,4 +95,3 @@ class ReadOnlyValidEIP2930Transaction extends ethereumjs_tx_1.AccessListEIP2930T
     }
 }
 exports.ReadOnlyValidEIP2930Transaction = ReadOnlyValidEIP2930Transaction;
-//# sourceMappingURL=ReadOnlyValidEIP2930Transaction.js.map

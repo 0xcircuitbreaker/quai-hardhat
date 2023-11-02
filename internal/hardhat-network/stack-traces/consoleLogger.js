@@ -175,4 +175,3 @@ class ConsoleLogger {
     }
 }
 exports.ConsoleLogger = ConsoleLogger;
-//# sourceMappingURL=consoleLogger.js.map

@@ -70,4 +70,3 @@ function isSuccessfulJsonResponse(payload) {
     return "result" in payload;
 }
 exports.isSuccessfulJsonResponse = isSuccessfulJsonResponse;
-//# sourceMappingURL=jsonrpc.js.map

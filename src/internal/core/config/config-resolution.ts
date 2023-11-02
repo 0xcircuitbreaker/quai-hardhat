@@ -70,6 +70,7 @@ export function resolveConfig(
     networks: resolveNetworksConfig(userConfig.networks),
     solidity: resolveSolidityConfig(userConfig),
     mocha: resolveMochaConfig(userConfig),
+    customCompilerPath: resolveCustomCompilerPath(userConfig),
   };
 }
 
@@ -426,6 +427,10 @@ function resolveMochaConfig(userConfig: HardhatUserConfig): Mocha.MochaOptions {
     ...cloneDeep(defaultMochaOptions),
     ...userConfig.mocha,
   };
+}
+
+function resolveCustomCompilerPath(userConfig: HardhatUserConfig): string {
+  return userConfig.customCompilerPath ?? "";
 }
 
 /**

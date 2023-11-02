@@ -48,4 +48,3 @@ exports.rpcIntervalMining = t.union([
     base_types_1.rpcUnsignedInteger,
     rpcIntervalMiningRange,
 ]);
-//# sourceMappingURL=hardhat-network.js.map

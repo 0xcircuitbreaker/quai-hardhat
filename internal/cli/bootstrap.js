@@ -13,4 +13,3 @@ if (!semver_1.default.satisfies(process.version, constants_1.SUPPORTED_NODE_VERS
     console.log();
 }
 require("./cli");
-//# sourceMappingURL=bootstrap.js.map

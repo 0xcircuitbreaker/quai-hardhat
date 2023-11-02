@@ -18,4 +18,3 @@ exports.makeEmptyAccountState = (0, immutable_1.Record)({
     code: "0x",
     storageCleared: true,
 });
-//# sourceMappingURL=AccountState.js.map

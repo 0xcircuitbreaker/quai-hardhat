@@ -123,4 +123,3 @@ function getSolidityFilesCachePath(paths) {
     return path.join(paths.cache, constants_1.SOLIDITY_FILES_CACHE_FILENAME);
 }
 exports.getSolidityFilesCachePath = getSolidityFilesCachePath;
-//# sourceMappingURL=solidity-files-cache.js.map

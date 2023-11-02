@@ -48,4 +48,3 @@ function removeRightZeros(str) {
     }
     return str.substr(0, str.length - zeros);
 }
-//# sourceMappingURL=wei-values.js.map
